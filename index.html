@@ -30,7 +30,11 @@
                 $('.navbar-nav .nav-item').removeClass('active');
                 $(this).addClass('active');
             })
-            $('.splash').height($('.intro').height());
+
+            if($('.splash').height() < $('.intro').height()){
+                $('.splash').height($('.intro').height());
+            }
+
         });
     </script>
 </head>
@@ -92,12 +96,12 @@
                             1.
                             <br class="gap-70"/>
                             <br class="gap-70"/>
-
+                            <br class="gap-70"/>
+                            <br class="gap-70"/>
                         <a href="#prospectivearticles" class="btn btn-outline-light btn-lg" style="margin-bottom: 20px;"> Accepted Papers </a> &nbsp;
                         <a href="pdf/Stage%201%20Submission%20Template.pdf" download="Stage 1 Submission Template"
                            class="btn btn-lg btn-dark" style="margin-bottom: 20px;">Download Stage 1 Submission Template </a>
 
-                            <br class="gap-70"/>
                         </p>
 
                     </div>
