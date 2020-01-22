@@ -336,6 +336,15 @@ label {
   /* Adjusts for spacing */
 
 }
+.splash-block:after {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+    /* Adjusts for spacing */
+
+}
 .centered {
   display: inline-block;
   vertical-align: middle;
@@ -363,7 +372,7 @@ label {
 
 /*= space
 ---------------------------------------------------------------------------------------------- */
-#space { background:#f7f7f7; padding:40px 0;   border-bottom: 1px solid #E5E5E5; clear:both; margin-top: auto;}
+#space { background:#f7f7f7; padding:40px 0;   border-bottom: 1px solid #E5E5E5; clear:both;}
 #space .col-lg-12 { text-align:center;}
 
 
