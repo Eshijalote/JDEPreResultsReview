@@ -206,6 +206,7 @@ label {
 .section.type-1 {
   background:  #2a333b;
   color: #a5b3bf;
+
 }
 .section.type-1 h1,
 .section.type-1 h2,
@@ -267,11 +268,15 @@ label {
     background: linear-gradient(135deg, rgb(90, 109, 126) 0%, #00a0dc 100%);
     background: linear-gradient(135deg, rgb(90, 109, 126) 0%, #99999b 100%);
     background: linear-gradient(135deg, #2e5ba4 0%, #31322f 100%);*/
-    background: linear-gradient(135deg, #2e5ba4 0%, #4195c3 100%);
+    background: linear-gradient(135deg, #2e5ba4 0%, #4195c3 100%)!important;
 
 
   position: relative;
   z-index: 1;
+
+}
+.section.splash:after {
+    clear : both;
 }
 .section.splash h1 {
   font-size: 50px;
@@ -358,8 +363,8 @@ label {
 
 /*= space
 ---------------------------------------------------------------------------------------------- */
-#space { background:#f7f7f7; padding:40px 0;   border-bottom: 1px solid #E5E5E5;}
-#space .col-lg-2 { text-align:center;}
+#space { background:#f7f7f7; padding:40px 0;   border-bottom: 1px solid #E5E5E5; clear:both; margin-top: auto;}
+#space .col-lg-12 { text-align:center;}
 
 
 
