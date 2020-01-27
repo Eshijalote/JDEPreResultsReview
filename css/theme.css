@@ -340,7 +340,7 @@ label {
 .centered {
   display: inline-block;
   vertical-align: middle;
-  text-align: center;
+  text-align: left!important;
   width: 100%;
   padding: 100px 0;
 }
@@ -453,6 +453,22 @@ font-weight: 400;
   padding: 15px;
 }
 
+.paper-header{
+    font-size: 1.2rem;
+    color: #007398;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    float:none;
+
+}
+
+.paper-author{
+    color: #0e1a27;
+}
+
+.article-info{
+    color: #4e5979;
+}
 /*= SOCIAL LINKS
 ---------------------------------------------------------------------------------------------- */
 .social-links {

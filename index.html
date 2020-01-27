@@ -31,7 +31,7 @@
                 $(this).addClass('active');
             })
 
-            if($('.splash').height() < $('.intro').height()){
+            if ($('.splash').height() < $('.intro').height()) {
                 $('.splash').height($('.intro').height());
             }
 
@@ -78,50 +78,53 @@
     <div class="container">
         <div class="splash-block">
             <div class="centered">
-                <div class="container">
-                    <div class="section-headlines intro">
+                <div class="container intro">
+                    <br class="gap-70"/>
+                    <br class="gap-70"/>
 
-                        <p>The Journal of Development Economics(JDE) now offers authors the opportunity to have their
-                            prospective empirical projects reviewed and approved for publication before the empirical
-                            results are
-                            known. This pre-results review track for submissions is based on a two-stage peer review
-                            process, during which authors receive feedback on both the research design and proposed
-                            statistical analysis plan (Stage 1) and the full manuscript (Stage 2). </p>
-                        <p>In Stage 1, authors submit a proposal that includes an
-                            introduction, methods, and data analysis plan for a prospective study. High-quality studies
-                            are accepted based on pre-results review, which constitutes a commitment by the JDE to
-                            publish the upcoming paper, regardless of the results. Authors can then collect and analyze
-                            the data and submit a full paper for final review and publication (Stage 2). Stage 2 review
-                            makes sure that the final paper is aligned with the research design accepted in Stage
-                            1.
-                            <br class="gap-70"/>
-                            <br class="gap-70"/>
-                            <br class="gap-70"/>
-                            <br class="gap-70"/>
-                        <a href="#prospectivearticles" class="btn btn-outline-light btn-lg" style="margin-bottom: 20px;"> Accepted Papers </a> &nbsp;
+                    <p>The Journal of Development Economics(JDE) now offers authors the opportunity to have their
+                        prospective empirical projects reviewed and approved for publication before the empirical
+                        results are
+                        known. This pre-results review track for submissions is based on a two-stage peer review
+                        process.</p><p>In Stage 1, authors submit a proposal that includes an
+                        introduction, methods, and data analysis plan for a prospective study. High-quality studies
+                        are accepted based on pre-results review, which constitutes a commitment by the JDE to
+                        publish the upcoming paper, regardless of the results. Authors can then collect and analyze
+                        the data and submit a full paper for final review and publication (Stage 2). Stage 2 review
+                        makes sure that the final paper is aligned with the research design accepted in Stage
+                        1.
+                        <br class="gap-70"/>
+                        <br class="gap-70"/>
+                        <br class="gap-70"/>
+                        <br class="gap-70"/>
+                    </p>
+                    <p class="section-headlines">
+                        <a href="#prospectivearticles" class="btn btn-outline-light btn-lg"
+                           style="margin-bottom: 20px;"> Accepted Papers </a> &nbsp;
                         <a href="pdf/Stage%201%20Submission%20Template.pdf" download="Stage 1 Submission Template"
-                           class="btn btn-lg btn-dark" style="margin-bottom: 20px;">Download Stage 1 Submission Template </a>
+                           class="btn btn-lg btn-dark" style="margin-bottom: 20px;">Download Stage 1 Submission
+                            Template </a>
 
-                        </p>
+                    </p>
 
-                    </div>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
 <div style="clear: both;position: relative;">
-<section id="space" class="col-lg-12" >
+    <section id="space" class="col-lg-12">
 
-    <div class="container" style="clear: both;">
-        <div class="row" >
-            <div class="col-lg-12">&nbsp;</div>
+        <div class="container" style="clear: both;">
+            <div class="row">
+                <div class="col-lg-12">&nbsp;</div>
 
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 </div>
-<div id="FAQAuthor" class="jumper" ></div>
+<div id="FAQAuthor" class="jumper"></div>
 
 <div class="section type-2">
     <div class="container">
@@ -1276,7 +1279,7 @@
 
                     $.each(results, function (i, paper) {
 
-                        if (c == 0) {
+                        /*if (c == 0) {
                             c = 1;
                             div = "                <div class=\"papers radius3 paper-shadow\">\n";
                         } else {
@@ -1301,7 +1304,22 @@
                             "                    <br class=\"gap-30\"/>\n" +
                             "                    <br class=\"gap-30\"/>\n" +
                             "                </div>\n" +
-                            "            </div>");
+                            "            </div>");*/
+
+                        document.write("<div class=\"col-lg-10 offset-1\">\n" +
+                            "                            <hr>\n" +
+                            "                            <div class=\"paper-header\">\n" +
+                            "                            <a href=\"" + paper.linktostage1 + "\"   title=\"" +paper.title +"\"  rel=\"external\">\n" +
+                            "                            <span>"+  paper.title  +"</span>\n" +
+                            "                        </a>\n" +
+                            "  </div>\n" +
+                            "                        <div class=\"article-info\">" + paper.accepteddate + "</div>\n" +
+                            "<div class=\"article-info\">" +paper.status + "</div>\n" +
+                            "\n" +
+                            "                        <small class='paper-author'>\n" + paper.authors +
+                            "                        </small>\n" +
+                            "                        \n" +
+                            "                        </div>");
 
                     });
                 }
@@ -1315,6 +1333,10 @@
 
     </div>
 </div>
+
+
+
+
 
 <div id="contact" class="jumper"></div>
 
@@ -1348,7 +1370,7 @@
                                         </h5>
                                         <h5 style="padding-bottom: 15px;">Director of the Population Studies and
                                             Training Center</h5>
-                                        <br>
+
                                     </div>
                                 </div><!--/.media -->
                                 <ul class="social_icons">
@@ -1410,9 +1432,7 @@
                                         <h5 style="padding-bottom: 5px;">&nbsp;&nbsp;Frederic Esser Nemmers Chair
 
                                         </h5>
-                                        <h5 style="padding-bottom: 5px;">&nbsp;&nbsp;Co-Director, Global Poverty
-                                            Research Lab,
-                                            Buffett Institute</h5>
+
                                     </div>
 
 
@@ -1441,40 +1461,17 @@
                                     </li>
 
                                 </ul>
-                                <p>Dean Karlan is a Professor of Economics and Finance at Northwestern University, and
-                                    the Founder and President of Innovations for Poverty Action, a non-profit
-                                    organization dedicated to discovering and promoting solutions to global poverty
-                                    problems, and working to scale-up successful ideas through implementation and
-                                    dissemination to policymakers, practitioners, investors and donors. In 2015, he
-                                    co-founded ImpactMatters, a nonprofit dedicated to producing impact audits, which
-                                    assesses whether an organization uses and produces appropriate evidence of impact.
-
-                                </p>
-                                <p> His research focuses on microeconomic issues of poverty, typically employing
-                                    experimental methodologies and behavioral economics insights to examine what works,
-                                    what does not, and why in interventions in sustainable income generation for those
-                                    in poverty, household and entrepreneurial finance, health behavior, and charitable
-                                    giving. He works on issues for low-income households in both developing countries
-                                    and the United States.
-
-                                </p>
-                                <p> Karlan is on the Executive Committee of the Board of Directors of the M.I.T. Jameel
-                                    Poverty Action Lab. As a social entrepreneur, he is co-founder of stickK.com, a
-                                    website that uses lessons from behavioral economics to help people reach personal
-                                    goals, such as weight loss and smoking cessation, through commitment contracts on
-                                    corporate wellness platforms. In 2011, Karlan co-authored More Than Good Intentions:
-                                    How a New Economics is Helping to Solve Global Poverty, and in 2016 he co-authored
-                                    Failing in the Field.
-
-                                </p>
-                                <p> Karlan received a Presidential Early Career Award for Scientists and Engineers, an
-                                    Alfred P. Sloan Foundation Fellowship, and a Guggenheim Fellowship. He was awarded
-                                    distinguished alumni awards from the University of Chicago Booth Graduate School of
-                                    Business and the Duke University Talent Identification Program. Previously, Karlan
-                                    was the Samuel C Park, Jr Professor of Economics at Yale University, and Assistant
-                                    Professor of Economics at Princeton University. Karlan received a Ph.D. in Economics
-                                    from M.I.T., an M.B.A. and an M.P.P. from the University of Chicago, and a B.A. in
-                                    International Affairs from the University of Virginia.
+                                <p>Dean Karlan is a Professor of Economics and Finance at Northwestern University.
+                                    Karlan received a Ph.D. in Economics from M.I.T., an M.B.A. and an M.P.P. from the
+                                    University of Chicago, and a B.A. in International Affairs from the University of
+                                    Virginia. His research focuses on microeconomic issues of poverty, typically
+                                    employing experimental methodologies and behavioral economics insights to examine
+                                    what works, what does not, and why in interventions in sustainable income generation
+                                    for those in poverty, household and entrepreneurial finance, health behavior, and
+                                    charitable giving. He works on issues for low-income households in both developing
+                                    countries and the United States. Karlan is Founder of Innovations for Poverty Action
+                                    and is on the Executive Committee of the Board of Directors of the M.I.T. Jameel
+                                    Poverty Action Lab.
                                 </p>
                             </div>
                         </div><!--/.col-lg-4 -->
