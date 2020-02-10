@@ -104,24 +104,7 @@
         </div>
     </div>
 </footer>
-<script>
 
-    new ClipboardJS('.link', {
-        text: function (trigger) {
-            return trigger.childNodes[1].textContent;
-        }
-    });
-    $(document).ready(function () {
-        $('[data-toggle="tooltip"]').tooltip();
-    });
-
-    function changeTooltip(obj) {
-        event.preventDefault();
-        $(obj).attr('data-original-title', 'Copied');
-        $(obj).tooltip('show');
-        $(obj).attr('data-original-title', 'Click to Copy');
-    }
-</script>
 
 </body>
 </html>
