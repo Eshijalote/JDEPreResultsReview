@@ -61,7 +61,17 @@
             <ul class="navbar-nav navbar-right ml-auto  mt-2 mt-lg-0 mr-0">
                 <li class="nav-item active"><a class="nav-link" href="index.html">Home <span
                         class="sr-only">(current)</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="#prospectivearticles">Accepted Papers</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link nav-item-child nav-item-hover dropdown-toggle" href="#" id="navbarDropdown"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Accepted Papers
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="font-size: 14px;">
+                        <a class="dropdown-item nav-link" href="#prospectivearticles" style="color: #4e4e4e; ">Accepted Papers, Stage 1</a>
+                        <a class="dropdown-item nav-link " href="#acceptedarticles" style="color: #4e4e4e; ">Accepted Papers, Final and Published</a>
+                    </div>
+                </li>
                 <li class="nav-item"><a class="nav-link" href="Author-Guidelines.html">Author Guidelines</a></li>
                 <li class="nav-item"><a class="nav-link" href="pdf/Stage%201%20Submission%20Template/Stage%201%20Submission%20Template.pdf" target='_blank'>Stage 1
                     Submission Template</a>
@@ -100,14 +110,21 @@
                         <br class="gap-70"/>
                         <br class="gap-70"/>
                     </p>
-                    <p class="section-headlines">
-                        <a href="#prospectivearticles" class="btn btn-outline-light btn-lg"
-                           style="margin-bottom: 20px;"> Accepted Papers </a> &nbsp;
+                    <div class="section-headlines">&nbsp;
+                        <div class="btn-group" role="group">
+                            <button id="btnGroupDrop1" type="button" class="btn btn-outline-light btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-bottom: 20px;">
+                                Accepted Papers
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                <a class="dropdown-item btn btn-dark" href="#prospectivearticles">Accepted Papers, Stage 1</a>
+                                <a class="dropdown-item btn btn-dark" href="#acceptedarticles">Accepted Papers, Final and Published</a>
+                            </div>
+                        </div>&nbsp;&nbsp;&nbsp;
                         <a href="pdf/Stage%201%20Submission%20Template.zip" download="Stage 1 Submission Template"
                            class="btn btn-lg btn-dark" style="margin-bottom: 20px;">Download Stage 1 Submission
                             Template </a>
 
-                    </p>
+                    </div>
 
 
                 </div>
@@ -1262,14 +1279,19 @@
 
 <div id="prospectivearticles" class="jumper"></div>
 
-<div class="section type-2">
+<div class="section type-2" style="background: #f7f7f7">
     <div class="container">
         <div class="section-headlines">
-            <h4>Prospective Articles</h4>
-            <h2>Stage 1 accepted articles</h2>
-            <div> The following Stage 1 Proposals have been accepted based on pre-results review at the Journal of
-                Development Economics.
-            </div>
+            <h4>Accepted Papers, Stage 1</h4>
+<br><br>
+            <div class="row">
+
+
+                <div class="col-lg-12 questions">
+
+            <p>The following Stage 1 Proposals have been accepted based on pre-results review at the Journal of
+                Development Economics.</p>
+                </div></div>
         </div>
 
         <div class="papers row">
@@ -1281,48 +1303,24 @@
 
                     $.each(results, function (i, paper) {
 
-                        /*if (c == 0) {
-                            c = 1;
-                            div = "                <div class=\"papers radius3 paper-shadow\">\n";
-                        } else {
-                            c = 0;
-                            div = "                <div class=\"papers plan-featured radius3 paper-shadow\">\n";
+
+                        if(paper.status.toLowerCase() === "In process: Accepted Stage 1- Pending Stage 2 Submission".toLowerCase() || paper.status.toLowerCase() === "Inactive: Accepted Stage 1 - Did not complete Stage 2 Process".toLowerCase()) {
+
+                            document.write("<div class=\"col-lg-12\">\n" +
+                                "                            <hr>\n" +
+                                "                            <div class=\"paper-header\">\n" +
+                                "                            <a href=\"" + paper.linktostage1 + "\"   title=\"" + paper.title + "\"  rel=\"external\" target='_blank'>\n" +
+                                "                            <span>" + paper.title + "</span>\n" +
+                                "                        </a>\n" +
+                                "  </div>\n" +
+                                "                        <div class=\"article-info\">" + moment.utc(Date.parse(paper.accepteddate)).format("MMMM YYYY") + "</div>\n" +
+                                "<div class=\"article-info\">" + paper.status + "</div>\n" +
+                                "\n" +
+                                "                        <small class='paper-author'>\n" + paper.authors +
+                                "                        </small>\n" +
+                                "                        \n" +
+                                "                        </div>");
                         }
-                        document.write("<div class=\"col-lg-4\">\n" + div +
-                            "                    <div class=\"paper-title\">\n" +
-                            "                        <h3>" + paper.title + "<div class=\"author\"></div></h3>\n" +
-                            "                    </div>\n" +
-                            "                    <div class=\"paper-details\">\n" +
-                            "                        <div><b>Authors:</b> " + paper.authors + "<span class=\"icon-ok text-success pull-right\"></span>\n" +
-                            "                        </div>\n" +
-                            "                        <div><b>Accepted Date: </b>" + paper.accepteddate + " <span class=\"icon-asterisk text-danger pull-right\"></span>\n" +
-                            "                        </div>\n" +
-                            "                        <div><b>Status: </b> " + paper.status + "<span class=\"icon-ok  text-success pull-right\"></span>\n" +
-                            "                        </div>\n" +
-                            "                    </div>\n" +
-                            "                    <div class=\"paper-link\"><a href=\"" + paper.linktostage1 + "\" class=\"btn btn-inverse btn-block btn-large\">Read Stage 1 Paper</a></div>\n" +
-                            "                </div>\n" +
-                            "                <div class=\"visible-xs visible-sm\"><br class=\"gap-30\"/>\n" +
-                            "                    <br class=\"gap-30\"/>\n" +
-                            "                    <br class=\"gap-30\"/>\n" +
-                            "                </div>\n" +
-                            "            </div>");*/
-
-                        document.write("<div class=\"col-lg-10 offset-1\">\n" +
-                            "                            <hr>\n" +
-                            "                            <div class=\"paper-header\">\n" +
-                            "                            <a href=\"" + paper.linktostage1 + "\"   title=\"" +paper.title +"\"  rel=\"external\" target='_blank'>\n" +
-                            "                            <span>"+  paper.title  +"</span>\n" +
-                            "                        </a>\n" +
-                            "  </div>\n" +
-                            "                        <div class=\"article-info\">" + moment.utc(Date.parse(paper.accepteddate)).format("MMMM YYYY") + "</div>\n" +
-                            "<div class=\"article-info\">" +paper.status + "</div>\n" +
-                            "\n" +
-                            "                        <small class='paper-author'>\n" + paper.authors +
-                            "                        </small>\n" +
-                            "                        \n" +
-                            "                        </div>");
-
                     });
                 }
 
@@ -1334,11 +1332,69 @@
         </div>
 
     </div>
+
 </div>
 
 
 
 
+
+
+<div id="acceptedarticles" class="jumper"></div>
+
+<div class="section type-2">
+    <div class="container">
+        <div class="section-headlines">
+            <h4>Accepted Papers, Final and Published</h4>
+
+<br><br>
+        <div class="row">
+
+
+            <div class="col-lg-12 questions">
+
+             <p>The following papers were accepted after a pre-results review at the Journal of Development Economics and have subsequently been published with full results in either JDE or elsewhere.
+             </p> </div>  </div> </div>
+
+        <div class="papers row ">
+            <script>
+                var c = 0;
+                var div = "";
+
+                function display(results) {
+
+                    $.each(results, function (i, paper) {
+
+                        if(paper.status.toLowerCase() === "Complete: Stage 2 Published at JDE".toLowerCase() || paper.status.toLowerCase() === "Complete: Stage 2 Published elsewhere".toLowerCase()) {
+
+                                document.write("<div class=\"col-lg-12 \">\n" +
+                                    "                            <hr>\n" +
+                                    "                            <div class=\"paper-header\">\n" +
+                                    "                            <a href=\"" + paper.linktostage2 + "\"   title=\"" + paper.title + "\"  rel=\"external\" target='_blank'>\n" +
+                                    "                            <span>" + paper.title + "</span>\n" +
+                                    "                        </a>\n" +
+                                    "  </div> <div class=\"article - info\"><a href=\"" + paper.linktostage1 + "\" rel=\"external\" target='_blank' style='color: #006ea5'>Link to Stage 1 pre-results version of the paper</a></div>"  +
+                                    "                        <div class=\"article-info\">" + moment.utc(Date.parse(paper.accepteddate)).format("MMMM YYYY") + "</div>\n" +
+                                    "<div class=\"article-info\">" + paper.status + "</div>\n" +
+                                    "\n" +
+                                    "                        <small class='paper-author'>\n" + paper.authors +
+                                    "                        </small>\n" +
+                                    "                        \n" +
+                                    "                        </div>");
+                        }
+                    });
+
+                }
+
+            </script>
+
+            <script src="https://script.google.com/macros/s/AKfycbzMoO09zQsvVIlPztLI2UIV-8JMmXAzaPAQ73QwQDcq3Rqn3d8/exec?prefix=display">
+            </script>
+
+        </div>
+
+    </div>
+</div>
 
 <div id="contact" class="jumper"></div>
 
@@ -1518,7 +1574,14 @@
         $(obj).tooltip('show');
         $(obj).attr('data-original-title', 'Click to Copy');
     }
-</script>
 
+    $('.navbar-nav>li>a').on('click', function(){
+        $('.navbar-collapse').collapse('hide');
+    });
+    $('.navbar-nav>a').on('click', function(){
+        $('.navbar-collapse').collapse('hide');
+    });
+
+</script>
 </body>
 </html>

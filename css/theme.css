@@ -188,7 +188,21 @@ label {
     text-shadow: none;
 }
 
+.dropdown-menu{
+    padding: 0px;
+    margin: 0px;
+}
 
+.dropdown-item{
+    padding: 8px;
+}
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+.dropdown > .dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
 /*= HEADER
 ---------------------------------------------------------------------------------------------- */
 .header .navbar {
@@ -624,4 +638,29 @@ font-weight: 400;
 }
 .media-body{
     margin-left: 25px;
+}
+
+@media (max-width: 991px) {
+.dropdown-toggle {
+    display: none!important;
+}
+
+.navbar .dropdown-menu {
+    display: block;
+    position: relative!important;
+    border-width: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.dropdown-item {
+    width: 100%;
+    background: #343a40 !important;
+    color: rgba(255, 255, 255, 0.5)!important;
+}
+
+.dropdown-item:hover, .dropdown-item:focus{
+    color: rgba(255, 255, 255, 0.75)!important;
+}
 }
